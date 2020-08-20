@@ -7,8 +7,6 @@ public class MessageEvent extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        if(!event.getAuthor().isBot()) {
-            event.getChannel().sendMessage(event.getAuthor().getAsMention() + " said:\n" + event.getMessage().getContentRaw()).queue();
-        }
+
     }
 }
