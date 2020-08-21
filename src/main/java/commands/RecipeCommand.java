@@ -3,6 +3,7 @@ package commands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -138,9 +139,9 @@ public class RecipeCommand extends ListenerAdapter {
     private String getTitle(List<String> message) {
         StringBuilder sb = new StringBuilder();
         for (int i = 2; i < message.size(); i++) {
-            sb.append(message.get(i)).append(" ");
+            sb.append(StringUtils.capitalize(message.get(i))).append(" ");
         }
-        return sb.toString().toUpperCase();
+        return sb.toString();
     }
 
     private void sendCraftingRecipe(GuildMessageReceivedEvent event, String imgUrl, String title) {
@@ -148,6 +149,7 @@ public class RecipeCommand extends ListenerAdapter {
         eb.setTitle(title);
         eb.setImage(BASE_URL + imgUrl);
         eb.setColor(Color.RED);
+        eb.setFooter("Requested by " + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
         event.getChannel().sendMessage(eb.build()).queue();
     }
 
