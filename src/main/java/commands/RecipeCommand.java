@@ -16,11 +16,17 @@ import java.util.Arrays;
 import java.util.List;
 
 import static commands.BotConstants.*;
+import static commands.SpecialCasesConstants.*;
 
 public class RecipeCommand extends ListenerAdapter {
 
+    private static final String BE_MORE_SPECIFIC = "You'll have to be a bit more specific";
     private static final String RECIPE_MESSAGE = "You need to specify the item you're looking for";
     private static final String RECIPE = "Recipe";
+    private static final String BLOCK = "block";
+    private static final String NO_RECIPE_FOR_YOUR_ITEM = "There's no recipe for your item!";
+    private static final String CSS_QUERY = "img[src]";
+
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
@@ -30,8 +36,8 @@ public class RecipeCommand extends ListenerAdapter {
         if (!event.getAuthor().isBot()) {
             if (message.get(0).equalsIgnoreCase(TEMP_PREFIX) && message.get(1).equalsIgnoreCase(RECIPE)) {
                 String searchedRecipe = getSearchedRecipe(message).toLowerCase();
-                if (searchedRecipe.contains("block")) {
-                    event.getChannel().sendMessage("You'll have to be a bit more specific").queue();
+                if (searchedRecipe.equalsIgnoreCase(BLOCK)) {
+                    event.getChannel().sendMessage(BE_MORE_SPECIFIC).queue();
                     return;
                 }
                 if (message.size() <= 2) {
@@ -39,62 +45,94 @@ public class RecipeCommand extends ListenerAdapter {
                     return;
                 }
                 String title = getTitle(message);
-                specialCases(searchedRecipe, title, event);
-                for (String imgUrl : imgURLs) {
+                for (int i = 0; i < imgURLs.size(); i++) {
+                    String imgUrl = imgURLs.get(i);
+                    if (specialCases(searchedRecipe, title, event)) {
+                        break;
+                    }
                     if (imgUrl.contains(searchedRecipe)) {
                         sendCraftingRecipe(event, imgUrl, title);
                         break;
+                    }
+                    if (i == imgURLs.size() - 1 && !imgUrl.contains(searchedRecipe)) {
+                        event.getChannel().sendMessage(NO_RECIPE_FOR_YOUR_ITEM).queue();
                     }
                 }
             }
         }
     }
 
-    private void specialCases(String searchedRecipe, String title, GuildMessageReceivedEvent event) {
-        if (searchedRecipe.equalsIgnoreCase("wood")) {
+    private boolean specialCases(String searchedRecipe, String title, GuildMessageReceivedEvent event) {
+        if (searchedRecipe.equalsIgnoreCase(WOOD)) {
             sendCraftingRecipe(event, WOOD_URL, title);
+            return true;
         }
-        if (searchedRecipe.equalsIgnoreCase("sticks")) {
+        if (searchedRecipe.equalsIgnoreCase(STICKS)) {
             sendCraftingRecipe(event, STICKS_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("planks")) {
+        if (searchedRecipe.contains(PLANKS)) {
             sendCraftingRecipe(event, WOODEN_PLANKS_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("woodendoor") || searchedRecipe.contains("irondoor")) {
+        if (searchedRecipe.contains(WOODEN_DOOR) || searchedRecipe.contains(IRON_DOOR)) {
             sendCraftingRecipe(event, DOORS_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("pickaxe")) {
+        if (searchedRecipe.contains(PICKAXE)) {
             sendCraftingRecipe(event, PICKAXES_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("hoes")) {
+        if (searchedRecipe.contains(HOE)) {
             sendCraftingRecipe(event, HOES_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("SHOVELS")) {
+        if (searchedRecipe.contains(SHOVEL)) {
             sendCraftingRecipe(event, SHOVELS_URL, title);
+            return true;
         }
-        if (searchedRecipe.equalsIgnoreCase("woodenaxe")
-                || searchedRecipe.equalsIgnoreCase("stoneaxe")
-                || searchedRecipe.equalsIgnoreCase("ironaxe")
-                || searchedRecipe.equalsIgnoreCase("goldenaxe")
-                || searchedRecipe.equalsIgnoreCase("diamondaxe")
-                || searchedRecipe.equalsIgnoreCase("netheriteaxe")) {
+        if (searchedRecipe.equalsIgnoreCase(WOODEN_AXE)
+                || searchedRecipe.equalsIgnoreCase(STONE_AXE)
+                || searchedRecipe.equalsIgnoreCase(IRON_AXE)
+                || searchedRecipe.equalsIgnoreCase(GOLDEN_AXE)
+                || searchedRecipe.equalsIgnoreCase(DIAMOND_AXE)
+                || searchedRecipe.equalsIgnoreCase(NETHERITE_AXE)) {
             sendCraftingRecipe(event, AXES_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("sword")) {
+        if (searchedRecipe.contains(SWORD)) {
             sendCraftingRecipe(event, SWORDS_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("helmet")) {
+        if (searchedRecipe.contains(HELMET)) {
             sendCraftingRecipe(event, HELMETS_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("chestplate")) {
+        if (searchedRecipe.contains(CHESTPLATE)) {
             sendCraftingRecipe(event, CHESTPLATES_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("leggings")) {
+        if (searchedRecipe.contains(LEGGINGS)) {
             sendCraftingRecipe(event, LEGGINGS_URL, title);
+            return true;
         }
-        if (searchedRecipe.contains("boots")) {
+        if (searchedRecipe.contains(BOOTS)) {
             sendCraftingRecipe(event, BOOTS_URL, title);
+            return true;
         }
+        if (searchedRecipe.contains(COAL_BLOCK)) {
+            sendCraftingRecipe(event, COAL_BLOCK_URL, title);
+            return true;
+        }
+        if (searchedRecipe.equalsIgnoreCase(QUARTZ_BLOCK)) {
+            sendCraftingRecipe(event, QUARTZ_BLOCK_URL, title);
+            return true;
+        }
+        if (searchedRecipe.contains(REDSTONE_BLOCK)) {
+            sendCraftingRecipe(event, REDSTONE_BLOCK_URL, title);
+            return true;
+        }
+        return false;
     }
 
     private String getTitle(List<String> message) {
@@ -129,7 +167,7 @@ public class RecipeCommand extends ListenerAdapter {
             e.printStackTrace();
         }
 
-        Elements elements = doc.select("img[src]");
+        Elements elements = doc.select(CSS_QUERY);
         List<String> htmlStrings = new ArrayList<>();
         for (Element e : elements) {
             htmlStrings.add(e.toString());
