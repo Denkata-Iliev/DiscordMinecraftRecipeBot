@@ -17,5 +17,7 @@ music/AudioPlayerSendHandler.java
  music.AudioPlayerSendHandler
 Main.java
  Main
+commands/MusicConstants.java
+ commands.MusicConstants
 commands/MusicCommand.java
  commands.MusicCommand

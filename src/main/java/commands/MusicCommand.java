@@ -29,8 +29,48 @@ public class MusicCommand extends ListenerAdapter {
                     event.getChannel().sendMessage("Leaving...").queue();
                     break;
                 case "play":
-                    manager.loadAndPlay(event.getChannel(), "https://www.youtube.com/watch?v=A8pOVirjGF0");
-                    manager.getGuildMusicManager(event.getGuild()).player.setVolume(10);
+                    switch (message.get(2).toLowerCase()){
+                        case "cat":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.CAT);
+                            break;
+                        case "far":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.FAR);
+                            break;
+                        case "blocks":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.BLOCKS);
+                            break;
+                        case "chirp":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.CHIRP);
+                            break;
+                        case "mall":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.MALL);
+                            break;
+                        case "mellohi":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.MELLOHI);
+                            break;
+                        case "stall":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.STALL);
+                            break;
+                        case "strad":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.STRAD);
+                            break;
+                        case "ward":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.WARD);
+                            break;
+                        case "wait":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.WAIT);
+                            break;
+                        case "pigstep":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.PIGSTEP);
+                            break;
+                        case "11":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.DISC_11);
+                            break;
+                        case "13":
+                            manager.loadAndPlay(event.getChannel(), MusicConstants.DISC_13);
+                            break;
+                    }
+                    break;
             }
         }
     }
