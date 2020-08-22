@@ -27,6 +27,7 @@ public class RecipeCommand extends ListenerAdapter {
     private static final String BLOCK = "block";
     private static final String NO_RECIPE_FOR_YOUR_ITEM = "There's no recipe for your item!";
     private static final String CSS_QUERY = "img[src]";
+    private static final String AT_LEAST_FOUR_CHARACTERS_LONG = "Item has to be at least 4 characters long";
 
 
     @Override
@@ -37,6 +38,10 @@ public class RecipeCommand extends ListenerAdapter {
         if (!event.getAuthor().isBot()) {
             if (message.get(0).equalsIgnoreCase(TEMP_PREFIX) && message.get(1).equalsIgnoreCase(RECIPE)) {
                 String searchedRecipe = getSearchedRecipe(message).toLowerCase();
+                if (searchedRecipe.length() <= 3) {
+                    event.getChannel().sendMessage(AT_LEAST_FOUR_CHARACTERS_LONG).queue();
+                    return;
+                }
                 if (searchedRecipe.equalsIgnoreCase(BLOCK)) {
                     event.getChannel().sendMessage(BE_MORE_SPECIFIC).queue();
                     return;
@@ -64,6 +69,10 @@ public class RecipeCommand extends ListenerAdapter {
     }
 
     private boolean specialCases(String searchedRecipe, String title, GuildMessageReceivedEvent event) {
+        if (searchedRecipe.equalsIgnoreCase(CRAFTING_TABLE)) {
+            sendCraftingRecipe(event, CRAFTING_TABLE_URL, title);
+            return true;
+        }
         if (searchedRecipe.equalsIgnoreCase(WOOD)) {
             sendCraftingRecipe(event, WOOD_URL, title);
             return true;

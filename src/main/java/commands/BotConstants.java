@@ -20,4 +20,5 @@ public class BotConstants {
     public static final String COAL_BLOCK_URL = "imgs/craft_blockofcoal.png";
     public static final String QUARTZ_BLOCK_URL = "imgs/craft_blockofquartz.png";
     public static final String REDSTONE_BLOCK_URL = "imgs/craft_blockofredstone.png";
+    public static final String CRAFTING_TABLE_URL = "imgs/craft_workbench.png";
 }
