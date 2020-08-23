@@ -34,6 +34,10 @@ public class TrackScheduler extends AudioEventAdapter {
         }
     }
 
+    public BlockingQueue<AudioTrack> getQueue() {
+        return queue;
+    }
+
     /**
      * Start the next track, stopping the current one if it is playing.
      */

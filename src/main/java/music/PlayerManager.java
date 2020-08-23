@@ -62,6 +62,7 @@ public class PlayerManager {
                 channel.sendMessage("Adding to queue " + firstTrack.getInfo().title + " (first track of playlist " + playlist.getName() + ")").queue();
 
                 play(musicManager, firstTrack);
+                playlist.getTracks().forEach(musicManager.scheduler::queue);
             }
 
             @Override
