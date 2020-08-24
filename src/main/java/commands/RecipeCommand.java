@@ -158,7 +158,7 @@ public class RecipeCommand extends ListenerAdapter {
         eb.setTitle(title);
         eb.setImage(BASE_URL + imgUrl);
         eb.setColor(Color.RED);
-        eb.setFooter("Requested by " + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
+        eb.setFooter(REQUESTED_BY + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
         event.getChannel().sendMessage(eb.build()).queue();
     }
 
