@@ -8,8 +8,8 @@ import javax.annotation.Nonnull;
 
 import java.awt.*;
 
-import static commands.BotConstants.REQUESTED_BY;
-import static commands.BotConstants.TEMP_PREFIX;
+import static constants.BotConstants.REQUESTED_BY;
+import static constants.BotConstants.TEMP_PREFIX;
 
 public class BrewingCommand extends ListenerAdapter {
 

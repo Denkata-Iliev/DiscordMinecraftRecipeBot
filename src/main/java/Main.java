@@ -1,3 +1,4 @@
+import commands.MusicCommand;
 import commands.BrewingCommand;
 import commands.RecipeCommand;
 import net.dv8tion.jda.api.JDA;
@@ -10,6 +11,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         JDA jda = JDABuilder.createDefault(TOKEN).build();
         jda.addEventListener(new RecipeCommand());
+        jda.addEventListener(new MusicCommand());
         jda.addEventListener(new BrewingCommand());
     }
 }
