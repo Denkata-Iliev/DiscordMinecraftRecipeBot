@@ -1,6 +1,5 @@
 package commands;
 
-import constants.BotConstants;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -14,10 +13,11 @@ import javax.annotation.Nonnull;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static constants.BotConstants.*;
-import static constants.SpecialCasesConstants.*;
+import static commands.BotConstants.*;
+import static commands.SpecialCasesConstants.*;
 
 public class RecipeCommand extends ListenerAdapter {
 
