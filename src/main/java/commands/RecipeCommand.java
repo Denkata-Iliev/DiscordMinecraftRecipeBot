@@ -1,5 +1,6 @@
 package commands;
 
+import constants.BotConstants;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -13,36 +14,40 @@ import javax.annotation.Nonnull;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static commands.BotConstants.*;
-import static commands.SpecialCasesConstants.*;
+import static constants.BotConstants.*;
+import static constants.SpecialCasesConstants.*;
 
 public class RecipeCommand extends ListenerAdapter {
 
     private static final String BE_MORE_SPECIFIC = "You'll have to be a bit more specific";
-    private static final String RECIPE_MESSAGE = "You need to specify the item you're looking for";
+    private static final String SPECIFY_ITEM = "You need to specify the item you're looking for";
     private static final String RECIPE = "Recipe";
     private static final String BLOCK = "block";
     private static final String NO_RECIPE_FOR_YOUR_ITEM = "There's no recipe for your item!";
     private static final String CSS_QUERY = "img[src]";
+    private static final String AT_LEAST_FOUR_CHARACTERS_LONG = "Item has to be at least 4 characters long";
 
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        List<String> message = Arrays.asList(event.getMessage().getContentRaw().split(" "));
+        String[] message = event.getMessage().getContentRaw().split(" ");
         List<String> imgURLs = getImgURLs(BotConstants.BASE_URL);
 
         if (!event.getAuthor().isBot()) {
-            if (message.get(0).equalsIgnoreCase(TEMP_PREFIX) && message.get(1).equalsIgnoreCase(RECIPE)) {
+            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(RECIPE)) {
                 String searchedRecipe = getSearchedRecipe(message).toLowerCase();
-                if (searchedRecipe.equalsIgnoreCase(BLOCK)) {
-                    event.getChannel().sendMessage(BE_MORE_SPECIFIC).queue();
+                if (message.length <= 2) {
+                    event.getChannel().sendMessage(SPECIFY_ITEM).queue();
                     return;
                 }
-                if (message.size() <= 2) {
-                    event.getChannel().sendMessage(RECIPE_MESSAGE).queue();
+                if (searchedRecipe.length() <= 3) {
+                    event.getChannel().sendMessage(AT_LEAST_FOUR_CHARACTERS_LONG).queue();
+                    return;
+                }
+                if (searchedRecipe.equalsIgnoreCase(BLOCK)) {
+                    event.getChannel().sendMessage(BE_MORE_SPECIFIC).queue();
                     return;
                 }
                 String title = getTitle(message);
@@ -64,6 +69,10 @@ public class RecipeCommand extends ListenerAdapter {
     }
 
     private boolean specialCases(String searchedRecipe, String title, GuildMessageReceivedEvent event) {
+        if (searchedRecipe.equalsIgnoreCase(CRAFTING_TABLE)) {
+            sendCraftingRecipe(event, CRAFTING_TABLE_URL, title);
+            return true;
+        }
         if (searchedRecipe.equalsIgnoreCase(WOOD)) {
             sendCraftingRecipe(event, WOOD_URL, title);
             return true;
@@ -136,10 +145,10 @@ public class RecipeCommand extends ListenerAdapter {
         return false;
     }
 
-    private String getTitle(List<String> message) {
+    private String getTitle(String[] message) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 2; i < message.size(); i++) {
-            sb.append(StringUtils.capitalize(message.get(i))).append(" ");
+        for (int i = 2; i < message.length; i++) {
+            sb.append(StringUtils.capitalize(message[i])).append(" ");
         }
         return sb.toString();
     }
@@ -149,14 +158,14 @@ public class RecipeCommand extends ListenerAdapter {
         eb.setTitle(title);
         eb.setImage(BASE_URL + imgUrl);
         eb.setColor(Color.RED);
-        eb.setFooter("Requested by " + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
+        eb.setFooter(REQUESTED_BY + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
         event.getChannel().sendMessage(eb.build()).queue();
     }
 
-    private String getSearchedRecipe(List<String> message) {
+    private String getSearchedRecipe(String[] message) {
         StringBuilder searchedRecipe = new StringBuilder();
-        for (int i = 2; i < message.size(); i++) {
-            searchedRecipe.append(message.get(i));
+        for (int i = 2; i < message.length; i++) {
+            searchedRecipe.append(message[i]);
         }
         return searchedRecipe.toString();
     }

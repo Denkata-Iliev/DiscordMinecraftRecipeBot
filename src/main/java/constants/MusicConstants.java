@@ -1,4 +1,4 @@
-package commands;
+package constants;
 
 import java.util.HashMap;
 

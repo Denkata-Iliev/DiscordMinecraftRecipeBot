@@ -1,4 +1,4 @@
-package commands;
+package constants;
 
 public class SpecialCasesConstants {
     public static final String WOOD = "wood";
@@ -23,4 +23,5 @@ public class SpecialCasesConstants {
     public static final String COAL_BLOCK = "coalblock";
     public static final String QUARTZ_BLOCK = "quartzblock";
     public static final String REDSTONE_BLOCK = "redstoneblock";
+    public static final String CRAFTING_TABLE = "craftingtable";
 }
