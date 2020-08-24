@@ -32,13 +32,13 @@ public class RecipeCommand extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        List<String> message = Arrays.asList(event.getMessage().getContentRaw().split(" "));
+        String[] message = event.getMessage().getContentRaw().split(" ");
         List<String> imgURLs = getImgURLs(BotConstants.BASE_URL);
 
         if (!event.getAuthor().isBot()) {
-            if (message.get(0).equalsIgnoreCase(TEMP_PREFIX) && message.get(1).equalsIgnoreCase(RECIPE)) {
+            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(RECIPE)) {
                 String searchedRecipe = getSearchedRecipe(message).toLowerCase();
-                if (message.size() <= 2) {
+                if (message.length <= 2) {
                     event.getChannel().sendMessage(SPECIFY_ITEM).queue();
                     return;
                 }
@@ -145,10 +145,10 @@ public class RecipeCommand extends ListenerAdapter {
         return false;
     }
 
-    private String getTitle(List<String> message) {
+    private String getTitle(String[] message) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 2; i < message.size(); i++) {
-            sb.append(StringUtils.capitalize(message.get(i))).append(" ");
+        for (int i = 2; i < message.length; i++) {
+            sb.append(StringUtils.capitalize(message[i])).append(" ");
         }
         return sb.toString();
     }
@@ -162,10 +162,10 @@ public class RecipeCommand extends ListenerAdapter {
         event.getChannel().sendMessage(eb.build()).queue();
     }
 
-    private String getSearchedRecipe(List<String> message) {
+    private String getSearchedRecipe(String[] message) {
         StringBuilder searchedRecipe = new StringBuilder();
-        for (int i = 2; i < message.size(); i++) {
-            searchedRecipe.append(message.get(i));
+        for (int i = 2; i < message.length; i++) {
+            searchedRecipe.append(message[i]);
         }
         return searchedRecipe.toString();
     }
