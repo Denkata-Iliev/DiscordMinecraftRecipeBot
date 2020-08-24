@@ -14,6 +14,7 @@ import javax.annotation.Nonnull;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,7 @@ public class MusicCommand extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         List<String> message = Arrays.asList(event.getMessage().getContentRaw().split(" "));
+        HashMap<String, String> songs = MusicConstants.mapSongs();
         if (message.get(0).equalsIgnoreCase(BotConstants.TEMP_PREFIX)) {
             AudioManager audioManager = event.getGuild().getAudioManager();
             GuildVoiceState memberVoiceState = event.getMember().getVoiceState();
@@ -38,53 +40,20 @@ public class MusicCommand extends ListenerAdapter {
                 case "disconnect":
                     audioManager.closeAudioConnection();
                     channel.sendMessage("Leaving...").queue();
+                    musicManager.scheduler.getQueue().clear();
+                    musicManager.player.stopTrack();
+                    musicManager.player.setPaused(false);
                     break;
                 case "play":
-                    if(audioManager.getConnectedChannel() == null){
+                    if (audioManager.getConnectedChannel() == null) {
                         audioManager.openAudioConnection(memberVoiceState.getChannel());
                         channel.sendMessage("Joining...").queue();
                     }
-                    switch (message.get(2).toLowerCase()) {
-                        case "cat":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.CAT);
-                            break;
-                        case "far":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.FAR);
-                            break;
-                        case "blocks":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.BLOCKS);
-                            break;
-                        case "chirp":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.CHIRP);
-                            break;
-                        case "mall":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.MALL);
-                            break;
-                        case "mellohi":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.MELLOHI);
-                            break;
-                        case "stall":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.STALL);
-                            break;
-                        case "strad":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.STRAD);
-                            break;
-                        case "ward":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.WARD);
-                            break;
-                        case "wait":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.WAIT);
-                            break;
-                        case "pigstep":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.PIGSTEP);
-                            break;
-                        case "11":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.DISC_11);
-                            break;
-                        case "13":
-                            manager.loadAndPlay(event.getChannel(), MusicConstants.DISC_13);
-                            break;
-                    }
+                    String songName = message.get(2).toLowerCase();
+                    if (songs.get(songName) == null) {
+                        channel.sendMessage("No such song!").queue();
+                    } else
+                        manager.loadAndPlay(channel, songs.get(message.get(2).toLowerCase()));
                     break;
                 case "pause":
                     musicManager.player.setPaused(true);
@@ -127,27 +96,28 @@ public class MusicCommand extends ListenerAdapter {
                 case "np":
                     EmbedBuilder builder = new EmbedBuilder();
                     AudioTrackInfo trackInfo = musicManager.player.getPlayingTrack().getInfo();
-                    if(musicManager.player.getPlayingTrack() == null){
+                    if (musicManager.player.getPlayingTrack() == null) {
                         channel.sendMessage("There is no song playing!").queue();
                         break;
-                    }
-                    else {
+                    } else {
                         builder.setColor(Color.PINK);
-                        builder.setTitle(String.format("**Playing** [%s] (%s)\n%s : %s",
+                        builder.setTitle(String.format("Playing [%s] (%s)\n%s : %s",
                                 trackInfo.title,
                                 trackInfo.uri,
                                 formatTime(musicManager.player.getPlayingTrack().getPosition()),
                                 formatTime(musicManager.player.getPlayingTrack().getDuration())
-                                ));
+                        ));
                         channel.sendMessage(builder.build()).queue();
                     }
+                    break;
             }
         }
     }
-    private String formatTime(long milliseconds){
+
+    private String formatTime(long milliseconds) {
         long hours = milliseconds / TimeUnit.HOURS.toMillis(1);
         long minutes = milliseconds / TimeUnit.MINUTES.toMillis(1);
-        long seconds = milliseconds % TimeUnit.MINUTES.toMillis(1)/TimeUnit.SECONDS.toMillis(1);
-        return String.format("%02d:%02d:%02d",hours,minutes,seconds);
+        long seconds = milliseconds % TimeUnit.MINUTES.toMillis(1) / TimeUnit.SECONDS.toMillis(1);
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 }
