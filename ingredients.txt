@@ -1,0 +1,253 @@
+
+Wooden Planks, Log, imgs/craft_wood.gif
+Sticks, Wooden Planks, imgs/craft_stick.png
+Torches, Coal & Stick, imgs/craft_torch.png
+Crafting Table, Wooden Planks, imgs/craft_workbench.png
+Furnace, Cobblestone or Blackstone, imgs/craft_furnace.gif
+Chest, Wooden Planks, imgs/craft_chest.png
+Ladders, Sticks, imgs/new_craft_ladder.png
+Fence, Sticks & Wooden Planks, imgs/craft_fence.gif
+Boat, Wooden Planks, imgs/craft_boat.png
+Wooden Slabs, Wooden Planks, imgs/craft_woodenslabs.gif
+Stone Slabs, imgs/craft_stoneslabs.gif
+Sign, Wooden Planks & Stick, imgs/craft_sign_new.png
+Doors, Wooden Planks or Iron Ingots, imgs/craft_doors.gif
+Wood, Logs, imgs/craft_wood2.png
+
+Glowstone, Glowstone Dust, imgs/craft_glowstone.png
+Snow Block, Snowballs, imgs/craft_snow.png
+TNT, Gunpowder & Sand, imgs/craft_tnt.png
+Clay Block, Clay, imgs/craft_clay.png
+Brick Block, Clay Bricks, imgs/craft_brick.png
+Bookshelf, Wooden Planks & Books, imgs/craft_bookshelf.png
+Sandstone Block, Sand, imgs/craft_sandstone.png
+Smooth Sandstone, Sandstone Block, imgs/craft_smoothsandstone.png
+Decorative Sandstone, Sandstone Slabs, imgs/craft_decorativesandstone.png
+Note Block, Wooden Planks & Redstone, imgs/craft_noteblock.png
+Jack-O Lantern, Pumpkin & Torch, imgs/craft_jackolantern_new.png
+Lapis Lazuli Block, Lapis Lazuli Dye, imgs/craft_lapis.png
+Diamond Block, Diamonds, imgs/craft_diamondblock.jpg
+Gold Block, Gold Ingots, imgs/craft_goldblock.jpg
+Iron Block, Iron Ingots, imgs/craft_ironblock.jpg
+Emerald Block, Emeralds, imgs/craft_emeraldblock.png
+Coal Block, Coal, imgs/craft_blockofcoal.png
+Stone Brick, Stone, imgs/craft_stonebrick.png
+Wooden Stairs, Wooden Planks, imgs/craft_woodenstairs.gif
+Stone Stairs, Cobblestone or Sandstone or Brick or Stone Brick or Nether Brick or Quartz or Red Sandstone, imgs/craft_stonestairs.gif
+Cobblestone Wall, Cobblestone or Moss Stone, imgs/craft_cobblestonewall.gif
+Block of Redstone, Redstone, imgs/craft_blockofredstone.png
+Block of Quartz, Nether Quartz, imgs/craft_blockofquartz.png
+Chiseled Quartz Block, Quartz Slabs, imgs/craft_chiseledquartzblock.png
+Pillar Quartz Block, Blocks of Quartz, imgs/craft_pillarquartzblock.png
+Quartz Bricks, Blocks of Quartz, imgs/craft_quartzbricks.png
+Stained Clay, Hardened Clay & Dye, imgs/craft_stainedclay.gif
+Hay Bale, Wheat, imgs/craft_haybale.png
+Granite, Diorite & Nether Quartz, imgs/craft_granite.png
+Andesite, Diorite & Cobblestone, imgs/craft_andesite.png
+Diorite, Cobblestone & Nether Quartz, imgs/craft_diorite.png
+Polished Granite, Granite, imgs/craft_polishedgranite.png
+Polished Andesite, Andesite, imgs/craft_polishedandesite.png
+Polished Diorite, Diorite, imgs/craft_polisheddiorite.png
+Prismarine, Prismarine Shard, imgs/craft_prismarine.png
+Prismarine Bricks, Prismarine Shard, imgs/craft_prismarinebricks.png
+Dark Prismarine, Prismarine Shards & Black Dye, imgs/craft_darkprismarine.png
+Sea Lantern, Prismarine Crystals & Prismarine Shard, imgs/craft_sealantern.png
+Coarse Dirt, Dirt & Gravel, imgs/craft_coarsedirt.png
+Slime Block, Slimeball, imgs/craft_slimeblock.png
+Moss Stone, Cobblestone & Vines, imgs/craft_mossstone.png
+Mossy Stone Brick, Stone Brick & Vines, imgs/craft_mossystonebrick.png
+Chiseled Stone Brick, Stock Brick Slab, imgs/craft_chiseledstonebrick.png
+Red Sandstone, Red Sand, imgs/craft_redsandstone.png
+Smooth Red Sandstone, Red Sandstone, imgs/craft_smoothredsandstone.png
+Chiseled Red Sandstone, Red Sandstone Slab, imgs/craft_chiseledredsandstone.png
+Purpur Block, Popped Chorus Fruit, imgs/craft_purpurblock.png
+Purpur Pillar, Purpur Slab, imgs/craft_purpurpillar.png
+Magma Block, Magma Cream, imgs/craft_magmablock.png
+Nether Wart Block, Nether Wart, imgs/craft_netherwartblock.png
+Nether Brick, Nether Brick (Item), imgs/craft_netherbrick.png
+Red Nether Brick, Nether Wart & Nether Brick, imgs/craft_rednetherbrick.png
+Chiseled Nether Bricks, Nether Brick Slabs, imgs/craft_chiselednetherbricks.png
+Bone Block, Bone Meal, imgs/craft_boneblock.png
+Dried Kelp Block, Dried Kelp, imgs/craft_driedkelpblock.png
+Packed Ice, Ice, imgs/craft_packedice.png
+Blue Ice, Packed Ice, imgs/craft_blueice.png
+Honey Block, Honey Bottles, imgs/craft_honeyblock.png
+Honeycomb Block, Honeycomb, imgs/craft_honeycombblock.png
+Stripped Wood, Stripped Log, imgs/craft_strippedwood.png
+Polished Basalt, Basalt, imgs/craft_polishedbasalt.png
+Polished Blackstone, Blackstone, imgs/craft_polishedblackstone.png
+Chiseled Polished Blackstone, Polished Blackstone Slabs, imgs/craft_chiseledpolishedblackstone.png
+Polished Blackstone Bricks, Polished Blackstone, imgs/craft_polishedblackstonebricks.png
+Block of Netherite, Netherite Ingots, imgs/craft_blockofnetherite.png
+
+Pickaxes, Sticks & Wooden Planks or Cobblestone or Blackstone or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_pickaxes.gif
+Axes, Sticks & Wooden Planks or Cobblestone or Blackstone or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_axes.gif
+Shovels, Sticks & Wooden Planks or Cobblestone or Blackstone or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_shovels.gif
+Hoes, Sticks & Wooden Planks or Cobblestone or Blackstone or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_hoes.gif
+Fishing Rod, Sticks & String, imgs/craft_fishingrod.png
+Flint & Steel, Iron Ingot & Flint, imgs/craft_flintandsteel.png
+Compass, Iron Ingots & Redstone, imgs/craft_compass.png
+Clock, Gold Ingots & Redstone, imgs/craft_clock.png
+Bucket, Iron Ingots, imgs/craft_bucket.png
+Shears, Iron Ingots, imgs/craft_shears.png
+Shulker Box, Shulker Shell & Chest, imgs/craft_shulkerbox.png
+
+Helmets, Leather or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_helmets.gif
+Chestplates, Leather or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_chestplates.gif
+Leggings, Leather or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_leggings.gif
+Boots, Leather or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_boots.gif
+Swords, Sticks & Wooden Planks or Cobblestone or Blackstone or Iron Ingots or Gold Ingots or Diamonds, imgs/craft_swords.gif
+Bow, String & Sticks, imgs/craft_bow.png
+Arrow, Flint & Stick & Feather, imgs/craft_arrow.png
+Horse Armor, Leather, imgs/craft_horsearmor.png
+Shield, Planks & Iron Ingot, imgs/craft_shield.png
+Spectral Arrow, Glowstone Dust & Arrow, imgs/craft_spectralarrow.png
+Tipped Arrow, Lingering potion & Arrows, imgs/craft_tippedarrow.png
+Conduit, Nautilus Shell & Heart of the Sea, imgs/craft_conduit.png
+Turtle Shell, Scute, imgs/craft_turtleshell.png
+Crossbow, Sticks & Iron Ingot & String & Tripwire Hook, imgs/craft_crossbow.png
+
+Pressure Plates, Wooden Planks or Stone or Polished Blackstone, imgs/craft_pressureplates.gif
+Weighted Pressure Plates, Iron Ingots or Gold Ingots, imgs/craft_weightedpressureplates.gif
+Trapdoor, Wooden Planks, imgs/craft_trapdoor.png
+Fence Gate, Wooden Planks & Sticks, imgs/craft_fencegate.gif
+Buttons, Wooden Planks or Stone or Polished Blackstone, imgs/craft_buttons.gif
+Lever, Stick & Cobblestone, imgs/craft_lever.png
+Redstone Repeater, Stone & Redstone Torch & Redstone, imgs/craft_repeater.gif
+Redstone Torch, Stick & Redstone, imgs/craft_redstonetorch.png
+Jukebox, Wooden Planks & Diamond, imgs/craft_jukebox_new.png
+Dispenser, Cobblestone & Bow & Redstone, imgs/craft_dispenser.png
+Piston, Wooden Planks & Cobblestone & Iron Ingot & Redstone, imgs/craft_piston.png
+Sticky Piston, Piston & Slime Ball, imgs/craft_stickypiston.png
+Minecart, Iron Ingots, imgs/craft_minecart.png
+Powered Minecart, Minecart & Furnace, imgs/craft_poweredminecart.png
+Storage Minecart, Minecart & Chest, imgs/craft_storageminecart.png
+Rail, Iron Ingots & Stick, imgs/craft_tracks.png
+Powered Rail, Gold Ingots & Stick & Redstone, imgs/craft_poweredrail.jpg
+Detector Rail, Iron Ingots & Stone Pressure Plate & Redstone, imgs/craft_detectorrail.jpg
+Redstone Lamp, Redstone & Glowstone Block, imgs/0craft_redstonelamp.png
+Tripwire Hook, Iron Ingot & Stick & Wooden Plank, imgs/craft_tripwirehook.png
+Activator Rail, Iron Ingots & Sticks & Redstone Torch, imgs/craft_activatorrail.png
+Daylight Sensor, Glass & Nether Quartz & Wooden Slabs, imgs/craft_daylightsensor.png
+Dropper, Cobblestone & Redstone, imgs/craft_dropper.png
+Hopper, Iron Ingots & Chest, imgs/craft_hopper.png
+Minecart with Hopper, Hopper & Minecart, imgs/craft_minecartwithhopper.png
+Minecart with TNT, TNT & Minecart, imgs/craft_minecartwithtnt.png
+Redstone Comparator, Redstone Torches & Stone & Nether Quartz, imgs/craft_redstonecomparator.png
+Trapped Chest, Chest & Tripwire Hook, imgs/craft_trappedchest.png
+Iron Trapdoor, Iron Ingots, imgs/craft_irontrapdoor.png
+Observer, Cobblestone & Redstone Dust & Nether Quartz, imgs/craft_observer.png
+Target, Redstone Dust & Hay Bale, imgs/craft_target.png
+
+Bowl, Wooden Planks, imgs/craft_bowl.png
+Mushroom Stew, Bowl & Red Mushroom & Brown Mushroom, imgs/craft_stew.png
+Bread, Wheat, imgs/craft_bread.png
+Golden Apple, Apple & Gold Nuggets, imgs/craft_goldenapple.png
+Sugar, Sugar Cane, imgs/craft_sugar.png
+Cake, Milk Buckets & Sugar & Wheat & Egg, imgs/craft_cake.png
+Cookies, Wheat & Cocoa Beans, imgs/craft_cookie.png
+Melon Block, Melon Slice, imgs/craft_melonblock.png
+Melon Seeds, Melon Slice, imgs/craft_melonseeds.png
+Pumpkin Seeds, Pumpkin, imgs/craft_pumpkinseeds.png
+Golden Carrot, Carrot & Gold Nuggets, imgs/craft_goldencarrot.png
+Pumpkin Pie, Pumpkin & Egg & Sugar, imgs/craft_pumpkinpie.png
+Rabbit Stew, Mushroom & Bowl & Cooked Rabbit & Carrot & Baked Potato, imgs/craft_rabbitstew.png
+Suspicious Stew, Red Mushroom & Brown Mushroom & Bowl & Any Flower, imgs/craft_suspiciousstew.png
+Honey Bottle, Glass Bottles & Honey Block, imgs/craft_honeybottle.png
+
+Bed, Wooden Planks & Wool, imgs/craft_bed.png
+Painting, Sticks & Wool, imgs/craft_painting.png
+Paper, Sugar Cane, imgs/craft_paper.png
+Book, Paper & Leather, imgs/craft_book_new.png
+Book and Quill, Book & Feather & Ink Sac, imgs/craft_bookandquill.png
+Map, Paper & Compass, imgs/craft_map.png
+Glass Panes, Glass Blocks or Stained Glass Blocks, imgs/craft_glasspanes.gif
+Iron Bars, Iron Ingots, imgs/craft_ironbars.png
+Gold Ingot, Gold Nugget, imgs/craft_goldingot.png
+Nether Brick Fence, Nether Brick (item) & Nether Bricks, imgs/craft_netherbrickfence.png
+Eye of Ender, Ender Pearl & Blaze Powder, imgs/craft_eyeofender.png
+Enchantment Table, Book, Diamond & Obsidian., imgs/craft_enchantmenttable.png
+Fire Charge, Blaze Powder & Coal & Gunpowder, imgs/0craft_firecharge.png
+Ender Chest, Obsidian & Eye of Ender, imgs/craft_enderchest.png
+Beacon, Glass & Obsidian & Nether Star, imgs/craft_beacon_new.png
+Anvil, Iron Block & Iron Ingot, imgs/craft_anvil.png
+Flower Pot, Bricks, imgs/craft_flowerpot.png
+Item Frame, Sticks & Leather, imgs/craft_itemframe.png
+Carrot on a Stick, Fishing Rod & Carrot, imgs/craft_carrotonastick.png
+Warped Fungus on a Stick, Fishing Rod & Warped Fungus, imgs/craft_warpedfungusonastick.png
+Firework Rocket, Gunpowder & Paper & Firework Star, imgs/craft_fireworkrocket.gif
+Firework Star, Gunpowder & Dye & an extra ingredient (optional), imgs/craft_fireworkstar.gif
+Lead, String & Slimeball, imgs/craft_lead.png
+Carpets, Wool, imgs/craft_carpets.gif
+Stained Glass, Glass Blocks & Dye, imgs/craft_stainedglass.gif
+Leather, Rabbit hide, imgs/craft_leather.png
+Banner, imgs/craft_banner.png
+Armor Stand, Stone Slab & Stick, imgs/craft_armorstand.png
+End Rod, Blaze Rod & Popped Chorus Fruit, imgs/craft_endrod.png
+End Crystal, Glass & Eye of Ender & Ghast Tear, imgs/craft_endcrystal.png
+Iron Nugget, Iron Ingot, imgs/craft_ironnugget.png
+Concrete Powder, Dye & Sand & Gravel, imgs/craft_concretepowder.png
+Campfire, Sticks & Logs & Coal, imgs/craft_campfire.png
+Soul Campfire, Sticks & Logs & Soul Sand or Soul Soil, imgs/craft_soulcampfire.gif
+Scaffolding, Bamboo & String, imgs/craft_scaffolding.png
+Barrel, Wood Slabs & Wooden Planks, imgs/craft_barrel.png
+Blast Furnace, Iron Ingots & Furnace & Smooth Stone, imgs/craft_blastfurnace.png
+Smoker, Logs & Furnace, imgs/craft_smoker.png
+Cartography Table, Paper & Wooden Planks, imgs/craft_cartographytable.png
+Composter, Wooden Slabs, imgs/craft_composter.png
+Fletching Table, Flint & Wooden Planks, imgs/craft_fletchingtable.png
+Smithing Table, Iron Ingots & Wooden Planks, imgs/craft_smithingtable.png
+Stonecutter, Iron Ingot & Stone, imgs/craft_stonecutter.png
+Grindstone, Sticks & Stone Slab & Wooden Planks, imgs/craft_grindstone.png
+Lanterns, Iron Nuggets & Torch or Soul Torch, imgs/craft_lanterns.gif
+Lectern, Wood Slabs & Bookshelf, imgs/craft_lectern.png
+Loom, String & Wooden Planks, imgs/craft_loom.png
+Beehive, Wooden Planks & Honeycomb, imgs/craft_beehive.png
+Netherite Ingot, Netherite Scraps & Gold Ingots, imgs/craft_netheriteingot.png
+Chain, Iron Nuggets & Iron Ingot, imgs/craft_chain.png
+Respawn Anchor, Crying Obsidian & Glowstone, imgs/craft_respawnanchor.png
+Lodestone, Chiseled Stone Bricks & Netherite Ingot, imgs/craft_lodestone.png
+Soul Torch, Coal & Stick & Soul Sand or Soul Soil, imgs/craft_soultorch.gif
+
+Bone Meal, Bone, imgs/craft_bonemeal.png
+Light Gray Dye, Azure Bluet or Oxeye Daisy or White Tulip or Black Dye & White Dye or Gray Dye & White Dye, imgs/craft_lightgraydye.gif
+Gray Dye, Black Dye & White Dye, imgs/craft_graydye.png
+Rose Red, Red Tulip or Rose Bush, imgs/craft_reddye.gif
+Orange Dye, Rose Red & Dandelion Yellow or Orange Tulip, imgs/craft_orangedye.gif
+Dandelion Yellow, Dandelion or Sunflower, imgs/craft_yellowdye.gif
+Lime Dye, Green Dye & White Dye, imgs/craft_limedye.png
+Light Blue Dye, Blue Orchid or Blue Dye & White Dye, imgs/craft_lightbluedye.gif
+Cyan Dye, Blue Dye & Green Dye, imgs/craft_cyandye.png
+Purple Dye, Blue Dye & Red Dye, imgs/craft_purpledye.png
+Magenta Dye, Purple Dye & Pink Dye or Allium or Lilac, imgs/craft_magentadye.gif
+Pink Dye, Pink Tulip or Peony or Red Dye & White Dye, imgs/craft_pinkdye.gif
+White Dye, Bone Meal or Lily of the Valley, imgs/craft_whitedye.gif
+Blue Dye, Lapis Lazuli or Cornflower, imgs/craft_bluedye.gif
+Brown Dye, Cocoa Beans, imgs/craft_browndye.png
+Black Dye, Ink Sac or Wither Rose, imgs/craft_blackdye.gif
+
+Wool, String, imgs/craft_wool.png
+Light Gray Wool, Wool & Light Gray Dye, imgs/craft_lightgraywool.png
+Gray Wool, Wool & Gray Dye, imgs/craft_graywool.png
+Black Wool, Wool & Black Dye, imgs/craft_blackwool.png
+Red Wool, Wool & Rose Red, imgs/craft_redwool.png
+Orange Wool, Wool & Orange Dye, imgs/craft_orangewool.png
+Yellow Wool, Wool & Dandelion Yellow, imgs/craft_yellowwool.png
+Lime Wool, Wool & Lime Dye, imgs/craft_limewool.png
+Green Wool, Wool & Cactus Green, imgs/craft_greenwool.png
+Light Blue Wool, Wool & Light Blue Dye, imgs/craft_lightbluewool.png
+Cyan Wool, Wool & Cyan Dye, imgs/craft_cyanwool.png
+Blue Wool, Wool & Blue Dye, imgs/craft_bluewool.png
+Purple Wool, Wool & Purple Dye, imgs/craft_purplewool.png
+Magenta Wool, Wool & Magenta Dye, imgs/craft_magentawool.png
+Pink Wool, Wool & Pink Dye, imgs/craft_pinkwool.png
+Brown Wool, Wool & Brown Dye, imgs/craft_brownwool.png
+
+Glass Bottle, Glass, imgs/craft_glassbottle.png
+Cauldron, Iron Ingot, imgs/craft_cauldron.png
+Brewing Stand, Blaze Rod & Cobblestone, imgs/craft_brewingstand.png
+Blaze Powder, Blaze Rod, imgs/craft_blazepowder.png
+Magma Cream, Slimeball & Blaze Powder, imgs/craft_magmacream.png
+Fermented Spider Eye, Spider Eye, Brown Mushroom & Sugar, imgs/craft_fermentedspidereye.png
+Glistering Melon, Melon Slice & Gold Nugget, imgs/craft_glisteringmelon.png
+

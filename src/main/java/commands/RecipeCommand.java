@@ -13,7 +13,6 @@ import javax.annotation.Nonnull;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static commands.BotConstants.*;
@@ -22,12 +21,12 @@ import static commands.SpecialCasesConstants.*;
 public class RecipeCommand extends ListenerAdapter {
 
     private static final String BE_MORE_SPECIFIC = "You'll have to be a bit more specific";
-    private static final String SPECIFY_ITEM = "You need to specify the item you're looking for";
+    public static final String SPECIFY_ITEM = "You need to specify the item you're looking for";
     private static final String RECIPE = "Recipe";
     private static final String BLOCK = "block";
     private static final String NO_RECIPE_FOR_YOUR_ITEM = "There's no recipe for your item!";
     private static final String CSS_QUERY = "img[src]";
-    private static final String AT_LEAST_FOUR_CHARACTERS_LONG = "Item has to be at least 4 characters long";
+    public static final String AT_LEAST_FOUR_CHARACTERS_LONG = "Item has to be at least 4 characters long";
 
 
     @Override
