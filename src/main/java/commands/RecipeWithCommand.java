@@ -35,6 +35,8 @@ public class RecipeWithCommand extends ListenerAdapter {
     private static final File INGREDIENTS = new File(FILE_NAME);
     private static final String UTF_8 = "UTF-8";
     private static final String RECIPES_WITH = "Recipes With ";
+    private static final String NO_RECIPES_WITH_ITEM = "There are no recipes with this item";
+    private static final String DARK_PINK = "#d11d53";
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
@@ -42,7 +44,6 @@ public class RecipeWithCommand extends ListenerAdapter {
         if (!event.getAuthor().isBot()) {
             if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(RECIPES_WITH_COMMAND)) {
                 String ingredient = getSearchedIngredient(message);
-                System.out.println(ingredient.length() + " " + ingredient);
                 if (message.length <= 2) {
                     event.getChannel().sendMessage(RecipeCommand.SPECIFY_ITEM).queue();
                     return;
@@ -54,6 +55,10 @@ public class RecipeWithCommand extends ListenerAdapter {
                 try {
                     createIngredientsAndURLFile();
                     List<String> itemsWithIngredient = getItemsListWithIngredient(ingredient);
+                    if (itemsWithIngredient.isEmpty()) {
+                        event.getChannel().sendMessage(NO_RECIPES_WITH_ITEM).queue();
+                        return;
+                    }
                     sendList(event, itemsWithIngredient, ingredient);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -65,7 +70,7 @@ public class RecipeWithCommand extends ListenerAdapter {
     private void sendList(GuildMessageReceivedEvent event, List<String> itemsWithIngredient, String ingredient) {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle(RECIPES_WITH + StringUtils.capitalize(ingredient));
-        eb.setColor(Color.PINK);
+        eb.setColor(Color.decode(DARK_PINK));
         itemsWithIngredient.forEach(item -> {
             String[] split = item.split(":");
             eb.addField(split[0], split[1], false);
@@ -79,7 +84,7 @@ public class RecipeWithCommand extends ListenerAdapter {
         for (int i = 2; i < message.length; i++) {
             sb.append(StringUtils.capitalize(message[i])).append(" ");
         }
-        return sb.toString();
+        return sb.toString().trim();
     }
 
     private void createIngredientsAndURLFile() throws IOException {
