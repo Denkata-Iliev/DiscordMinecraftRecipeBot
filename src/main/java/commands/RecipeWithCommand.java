@@ -16,7 +16,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -35,7 +34,7 @@ public class RecipeWithCommand extends ListenerAdapter {
     private static final File INGREDIENTS = new File(FILE_NAME);
     private static final String UTF_8 = "UTF-8";
     private static final String RECIPES_WITH = "Recipes With ";
-    private static final String NO_RECIPES_WITH_ITEM = "There are no recipes with this item";
+    private static final String NO_RECIPES_WITH_ITEM = "There are no recipes with this item!";
     private static final String DARK_PINK = "#d11d53";
 
     @Override
