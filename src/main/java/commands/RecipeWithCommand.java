@@ -23,7 +23,7 @@ import static commands.BotConstants.*;
 
 public class RecipeWithCommand extends ListenerAdapter {
 
-    private static final String RECIPES_WITH_COMMAND = "recipes-with";
+    private static final String INGR = "ingr";
     private static final String TABLE = "table";
     private static final String NOT_THEAD_TR = ":not(thead) tr";
     private static final String SRC = "src";
@@ -41,7 +41,7 @@ public class RecipeWithCommand extends ListenerAdapter {
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         String[] message = event.getMessage().getContentRaw().split(" ");
         if (!event.getAuthor().isBot()) {
-            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(RECIPES_WITH_COMMAND)) {
+            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(INGR)) {
                 String ingredient = getSearchedIngredient(message);
                 if (message.length <= 2) {
                     event.getChannel().sendMessage(RecipeCommand.SPECIFY_ITEM).queue();
