@@ -1,3 +1,4 @@
+import commands.MusicCommand;
 import commands.BrewingCommand;
 import commands.RecipeCommand;
 import commands.RecipeWithCommand;
@@ -11,6 +12,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         JDA jda = JDABuilder.createDefault(TOKEN).build();
         jda.addEventListener(new RecipeCommand());
+        jda.addEventListener(new MusicCommand());
         jda.addEventListener(new BrewingCommand());
         jda.addEventListener(new RecipeWithCommand());
     }

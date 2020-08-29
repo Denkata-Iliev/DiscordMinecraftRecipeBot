@@ -1,4 +1,4 @@
-package commands;
+package constants;
 
 public class BotConstants {
 

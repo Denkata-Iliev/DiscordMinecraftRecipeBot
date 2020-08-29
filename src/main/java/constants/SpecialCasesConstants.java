@@ -1,4 +1,4 @@
-package commands;
+package constants;
 
 public class SpecialCasesConstants {
     public static final String WOOD = "wood";
