@@ -1,24 +1,30 @@
-music/TrackScheduler.java
- music.TrackScheduler
-commands/BrewingCommand.java
- commands.BrewingCommand
 commands/RecipeCommand.java
  commands.RecipeCommand
-Main.java
- Main
 constants/MusicConstants.java
  constants.MusicConstants
-music/PlayerManager.java
- music.PlayerManager
- music.PlayerManager$1
-music/GuildMusicManager.java
- music.GuildMusicManager
+commands/RecipeWithCommand.java
+ commands.RecipeWithCommand
 constants/SpecialCasesConstants.java
  constants.SpecialCasesConstants
 music/AudioPlayerSendHandler.java
  music.AudioPlayerSendHandler
 MessageEvent.java
  MessageEvent
+music/TrackScheduler.java
+ music.TrackScheduler
+commands/BrewingCommand.java
+ commands.BrewingCommand
+Main.java
+ Main
+music/PlayerManager.java
+ music.PlayerManager
+ music.PlayerManager$1
+commands/HelpCommand.java
+ commands.HelpCommand
+music/GuildMusicManager.java
+ music.GuildMusicManager
+commands/DiscListCommand.java
+ commands.DiscListCommand
 constants/BotConstants.java
  constants.BotConstants
 commands/MusicCommand.java

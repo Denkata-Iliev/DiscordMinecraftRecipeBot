@@ -97,12 +97,14 @@ public class MusicCommand extends ListenerAdapter {
                     break;
                 case "np":
                     EmbedBuilder builder = new EmbedBuilder();
+                    
                     AudioTrackInfo trackInfo = musicManager.player.getPlayingTrack().getInfo();
                     if (musicManager.player.getPlayingTrack() == null) {
                         channel.sendMessage("There is no song playing!").queue();
                         break;
                     } else {
                         builder.setColor(Color.PINK);
+                        builder.setFooter("Requested by: " + trackInfo.author, event.getAuthor().getAvatarUrl());
                         builder.setTitle(String.format("Playing [%s] (%s)\n%s : %s",
                                 trackInfo.title,
                                 trackInfo.uri,
@@ -112,6 +114,7 @@ public class MusicCommand extends ListenerAdapter {
                         channel.sendMessage(builder.build()).queue();
                     }
                     break;
+
             }
         }
     }
@@ -120,6 +123,13 @@ public class MusicCommand extends ListenerAdapter {
         long hours = milliseconds / TimeUnit.HOURS.toMillis(1);
         long minutes = milliseconds / TimeUnit.MINUTES.toMillis(1);
         long seconds = milliseconds % TimeUnit.MINUTES.toMillis(1) / TimeUnit.SECONDS.toMillis(1);
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        if(hours<=0){
+            return String.format("%02d:%02d", minutes, seconds);
+        }
+        else if(minutes<=0){
+            return String.format("%02d", seconds);
+        }
+        else
+            return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 }
