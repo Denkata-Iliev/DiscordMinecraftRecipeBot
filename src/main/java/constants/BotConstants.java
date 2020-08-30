@@ -22,4 +22,28 @@ public class BotConstants {
     public static final String REDSTONE_BLOCK_URL = "imgs/craft_blockofredstone.png";
     public static final String CRAFTING_TABLE_URL = "imgs/craft_workbench.png";
     public static final String REQUESTED_BY = "Requested by ";
+    public static final String HELP_TEXT  = "```diff\n" +
+            "- RECIPE COMMANDS\n" +
+            "CRAFTING RECIPES:\n" +
+            "+ <"+TEMP_PREFIX+"> <recipe> <the item you want to craft> : Shows how a certain item can be made.\n" +
+            "Example:\n" +
+            ""+TEMP_PREFIX+" recipe crafting table\n" +
+            "\n" +
+            "BREWING RECIPES\n" +
+            "+ <"+TEMP_PREFIX+"> <brewing> : Shows all the brewing recipes\n" +
+            "\n" +
+            "ITEMS YOU CAN BUILD WITH GIVEN INGREDIENT\n" +
+            "+ <"+TEMP_PREFIX+"> <ingr> <the ingredient> : Shows all the available items that can be beuild with a given ingredient\n" +
+            "Example:\n" +
+            ""+TEMP_PREFIX+" ingr wooden planks\n" +
+            "\n" +
+            "- MUSIC COMMANDS\n" +
+            "+ <"+TEMP_PREFIX+"> <join> : The bot joins your voice channel\n" +
+            "+ <"+TEMP_PREFIX+"> <disconnect/leave> : The bot leaves voice channel\n" +
+            "+ <"+TEMP_PREFIX+"> <play> : The bot plays a minecraft disk. Type pr disc list for more info\n" +
+            "+ <"+TEMP_PREFIX+"> <pause> : Pauses the bot\n" +
+            "+ <"+TEMP_PREFIX+"> <resume> : Resumes the bot\n" +
+            "+ <"+TEMP_PREFIX+"> <skip/next> : Plays next track\n" +
+            "+ <"+TEMP_PREFIX+"> <queue/q> : Shows the queue\n" +
+            "```";
 }

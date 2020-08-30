@@ -1,25 +1,29 @@
-constants/SpecialCasesConstants.java
- constants.SpecialCasesConstants
-commands/BrewingCommand.java
- commands.BrewingCommand
 commands/RecipeCommand.java
  commands.RecipeCommand
-constants/BotConstants.java
- constants.BotConstants
 constants/MusicConstants.java
  constants.MusicConstants
-MessageEvent.java
- MessageEvent
+commands/RecipeWithCommand.java
+ commands.RecipeWithCommand
+constants/SpecialCasesConstants.java
+ constants.SpecialCasesConstants
 music/AudioPlayerSendHandler.java
  music.AudioPlayerSendHandler
+MessageEvent.java
+ MessageEvent
 music/TrackScheduler.java
  music.TrackScheduler
-music/GuildMusicManager.java
- music.GuildMusicManager
+commands/BrewingCommand.java
+ commands.BrewingCommand
+commands/MusicCommand.java
+ commands.MusicCommand
 music/PlayerManager.java
  music.PlayerManager
  music.PlayerManager$1
+commands/HelpCommand.java
+ commands.HelpCommand
+music/GuildMusicManager.java
+ music.GuildMusicManager
+constants/BotConstants.java
+ constants.BotConstants
 Main.java
  Main
-commands/MusicCommand.java
- commands.MusicCommand

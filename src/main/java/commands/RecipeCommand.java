@@ -21,19 +21,19 @@ import static constants.SpecialCasesConstants.*;
 
 public class RecipeCommand extends ListenerAdapter {
 
-    private static final String BE_MORE_SPECIFIC = "You'll have to be a bit more specific";
-    private static final String SPECIFY_ITEM = "You need to specify the item you're looking for";
+    private static final String BE_MORE_SPECIFIC = "You'll have to be a bit more specific!";
+    public static final String SPECIFY_ITEM = "You need to specify the item you're looking for!";
     private static final String RECIPE = "Recipe";
     private static final String BLOCK = "block";
     private static final String NO_RECIPE_FOR_YOUR_ITEM = "There's no recipe for your item!";
     private static final String CSS_QUERY = "img[src]";
-    private static final String AT_LEAST_FOUR_CHARACTERS_LONG = "Item has to be at least 4 characters long";
+    public static final String AT_LEAST_FOUR_CHARACTERS_LONG = "Item has to be at least 4 characters long!";
 
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         String[] message = event.getMessage().getContentRaw().split(" ");
-        List<String> imgURLs = getImgURLs(BotConstants.BASE_URL);
+        List<String> imgURLs = getImgURLs();
 
         if (!event.getAuthor().isBot()) {
             if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(RECIPE)) {
@@ -170,10 +170,10 @@ public class RecipeCommand extends ListenerAdapter {
         return searchedRecipe.toString();
     }
 
-    private List<String> getImgURLs(String baseUrl) {
+    private List<String> getImgURLs() {
         Document doc = null;
         try {
-            doc = Jsoup.connect(baseUrl).get();
+            doc = Jsoup.connect(BASE_URL).get();
         } catch (IOException e) {
             e.printStackTrace();
         }
