@@ -13,5 +13,6 @@ public class Main {
         jda.addEventListener(new BrewingCommand());
         jda.addEventListener(new RecipeWithCommand());
         jda.addEventListener(new HelpCommand());
+        jda.addEventListener(new DiscListCommand());
     }
 }

@@ -34,4 +34,21 @@ public class MusicConstants {
         songs.put("11", DISC_11);
         return songs;
     }
+    public static final String DISC_LIST  =
+            "```diff\n" +
+            "- MUSIC DISCS\n" +
+            "+ Cat\n" +
+            "+ Far\n" +
+            "+ Blocks\n" +
+            "+ Chirp\n" +
+            "+ Mall\n" +
+            "+ Mellohi\n" +
+            "+ Stall\n" +
+            "+ Strad\n" +
+            "+ Ward\n" +
+            "+. Wait\n" +
+            "+. 11\n" +
+            "+. Pigstep\n" +
+            "+. 13\n"+
+            "```";
 }

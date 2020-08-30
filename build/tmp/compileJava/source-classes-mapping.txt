@@ -14,8 +14,8 @@ music/TrackScheduler.java
  music.TrackScheduler
 commands/BrewingCommand.java
  commands.BrewingCommand
-commands/MusicCommand.java
- commands.MusicCommand
+Main.java
+ Main
 music/PlayerManager.java
  music.PlayerManager
  music.PlayerManager$1
@@ -23,7 +23,9 @@ commands/HelpCommand.java
  commands.HelpCommand
 music/GuildMusicManager.java
  music.GuildMusicManager
+commands/DiscListCommand.java
+ commands.DiscListCommand
 constants/BotConstants.java
  constants.BotConstants
-Main.java
- Main
+commands/MusicCommand.java
+ commands.MusicCommand
