@@ -11,7 +11,7 @@ public class DiscListCommand extends ListenerAdapter {
     @Override
     public void onMessageReceived(@Nonnull MessageReceivedEvent event) {
         String[] message = event.getMessage().getContentRaw().split(" ");
-        if(message[0].equalsIgnoreCase(BotConstants.TEMP_PREFIX) && message[1].equalsIgnoreCase("discs")){
+        if(message[0].equalsIgnoreCase(BotConstants.PREFIX) && message[1].equalsIgnoreCase("discs")){
             event.getChannel().sendMessage(MusicConstants.DISC_LIST).queue();
         }
     }

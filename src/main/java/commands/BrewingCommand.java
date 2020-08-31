@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
 import java.awt.*;
 
 import static constants.BotConstants.REQUESTED_BY;
-import static constants.BotConstants.TEMP_PREFIX;
+import static constants.BotConstants.PREFIX;
 
 public class BrewingCommand extends ListenerAdapter {
 
@@ -23,7 +23,7 @@ public class BrewingCommand extends ListenerAdapter {
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         String[] message = event.getMessage().getContentRaw().split(" ");
         if (!event.getAuthor().isBot()) {
-            if (message[0].equals(TEMP_PREFIX) && message[1].equalsIgnoreCase(BREWING)) {
+            if (message[0].equals(PREFIX) && message[1].equalsIgnoreCase(BREWING)) {
                 sendBrewingPicture(event);
             }
         }

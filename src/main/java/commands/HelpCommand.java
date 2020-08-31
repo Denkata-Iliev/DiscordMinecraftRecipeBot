@@ -10,7 +10,7 @@ public class HelpCommand extends ListenerAdapter {
     @Override
     public void onMessageReceived(@Nonnull MessageReceivedEvent event) {
         String[] message = event.getMessage().getContentRaw().split(" ");
-        if(message[0].equalsIgnoreCase(BotConstants.TEMP_PREFIX) && message[1].equalsIgnoreCase("help")){
+        if(message[0].equalsIgnoreCase(BotConstants.PREFIX) && message[1].equalsIgnoreCase("help")){
             event.getChannel().sendMessage(BotConstants.HELP_TEXT).queue();
         }
     }

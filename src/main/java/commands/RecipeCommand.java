@@ -1,6 +1,5 @@
 package commands;
 
-import constants.BotConstants;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -36,7 +35,7 @@ public class RecipeCommand extends ListenerAdapter {
         List<String> imgURLs = getImgURLs();
 
         if (!event.getAuthor().isBot()) {
-            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(RECIPE)) {
+            if (message[0].equalsIgnoreCase(PREFIX) && message[1].equalsIgnoreCase(RECIPE)) {
                 String searchedRecipe = getSearchedRecipe(message).toLowerCase();
                 if (message.length <= 2) {
                     event.getChannel().sendMessage(SPECIFY_ITEM).queue();

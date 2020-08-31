@@ -41,7 +41,7 @@ public class RecipeWithCommand extends ListenerAdapter {
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         String[] message = event.getMessage().getContentRaw().split(" ");
         if (!event.getAuthor().isBot()) {
-            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(INGR)) {
+            if (message[0].equalsIgnoreCase(PREFIX) && message[1].equalsIgnoreCase(INGR)) {
                 String ingredient = getSearchedIngredient(message);
                 if (message.length <= 2) {
                     event.getChannel().sendMessage(RecipeCommand.SPECIFY_ITEM).queue();
