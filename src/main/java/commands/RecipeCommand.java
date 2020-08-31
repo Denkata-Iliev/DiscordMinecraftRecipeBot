@@ -1,5 +1,6 @@
 package commands;
 
+import constants.BotConstants;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -31,36 +32,38 @@ public class RecipeCommand extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        String[] message = event.getMessage().getContentRaw().split(" ");
         List<String> imgURLs = getImgURLs();
 
-        if (!event.getAuthor().isBot()) {
-            if (message[0].equalsIgnoreCase(PREFIX) && message[1].equalsIgnoreCase(RECIPE)) {
-                String searchedRecipe = getSearchedRecipe(message).toLowerCase();
-                if (message.length <= 2) {
-                    event.getChannel().sendMessage(SPECIFY_ITEM).queue();
-                    return;
-                }
-                if (searchedRecipe.length() <= 3) {
-                    event.getChannel().sendMessage(AT_LEAST_FOUR_CHARACTERS_LONG).queue();
-                    return;
-                }
-                if (searchedRecipe.equalsIgnoreCase(BLOCK)) {
-                    event.getChannel().sendMessage(BE_MORE_SPECIFIC).queue();
-                    return;
-                }
-                String title = getTitle(message);
-                for (int i = 0; i < imgURLs.size(); i++) {
-                    String imgUrl = imgURLs.get(i);
-                    if (specialCases(searchedRecipe, title, event)) {
-                        break;
+        if (event.getMessage().getContentRaw().indexOf(BotConstants.PREFIX) == 0) {
+            String[] message = event.getMessage().getContentRaw().substring(BotConstants.PREFIX.length()).split(" ");
+            if (!event.getAuthor().isBot() && message.length > 0) {
+                if (message[0].equalsIgnoreCase(RECIPE)) {
+                    String searchedRecipe = getSearchedRecipe(message).toLowerCase();
+                    if (message.length <= 1) {
+                        event.getChannel().sendMessage(SPECIFY_ITEM).queue();
+                        return;
                     }
-                    if (imgUrl.contains(searchedRecipe)) {
-                        sendCraftingRecipe(event, imgUrl, title);
-                        break;
+                    if (searchedRecipe.length() <= 3) {
+                        event.getChannel().sendMessage(AT_LEAST_FOUR_CHARACTERS_LONG).queue();
+                        return;
                     }
-                    if (i == imgURLs.size() - 1 && !imgUrl.contains(searchedRecipe)) {
-                        event.getChannel().sendMessage(NO_RECIPE_FOR_YOUR_ITEM).queue();
+                    if (searchedRecipe.equalsIgnoreCase(BLOCK)) {
+                        event.getChannel().sendMessage(BE_MORE_SPECIFIC).queue();
+                        return;
+                    }
+                    String title = getTitle(message);
+                    for (int i = 0; i < imgURLs.size(); i++) {
+                        String imgUrl = imgURLs.get(i);
+                        if (specialCases(searchedRecipe, title, event)) {
+                            break;
+                        }
+                        if (imgUrl.contains(searchedRecipe)) {
+                            sendCraftingRecipe(event, imgUrl, title);
+                            break;
+                        }
+                        if (i == imgURLs.size() - 1 && !imgUrl.contains(searchedRecipe)) {
+                            event.getChannel().sendMessage(NO_RECIPE_FOR_YOUR_ITEM).queue();
+                        }
                     }
                 }
             }
@@ -146,7 +149,7 @@ public class RecipeCommand extends ListenerAdapter {
 
     private String getTitle(String[] message) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 2; i < message.length; i++) {
+        for (int i = 1; i < message.length; i++) {
             sb.append(StringUtils.capitalize(message[i])).append(" ");
         }
         return sb.toString();
@@ -163,7 +166,7 @@ public class RecipeCommand extends ListenerAdapter {
 
     private String getSearchedRecipe(String[] message) {
         StringBuilder searchedRecipe = new StringBuilder();
-        for (int i = 2; i < message.length; i++) {
+        for (int i = 1; i < message.length; i++) {
             searchedRecipe.append(message[i]);
         }
         return searchedRecipe.toString();

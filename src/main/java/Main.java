@@ -1,18 +1,22 @@
 import commands.*;
-import net.dv8tion.jda.api.JDA;
+import constants.BotConstants;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
 
 public class Main {
 
     private static final String TOKEN = "NzQ1MjYxMzcwMDEzOTA5MDcy.XzvMvA.MlLSmRB3KavJyuEtQYR37hh3tpc";
 
     public static void main(String[] args) throws Exception {
-        JDA jda = JDABuilder.createDefault(TOKEN).build();
-        jda.addEventListener(new RecipeCommand());
-        jda.addEventListener(new MusicCommand());
-        jda.addEventListener(new BrewingCommand());
-        jda.addEventListener(new RecipeWithCommand());
-        jda.addEventListener(new HelpCommand());
-        jda.addEventListener(new DiscListCommand());
+        JDABuilder jda = JDABuilder.createDefault(TOKEN);
+        jda.setActivity(Activity.watching(BotConstants.PREFIX +"help"));
+        jda.addEventListeners(new RecipeCommand());
+        jda.addEventListeners(new MusicCommand());
+        jda.addEventListeners(new BrewingCommand());
+        jda.addEventListeners(new RecipeWithCommand());
+        jda.addEventListeners(new HelpCommand());
+        jda.addEventListeners(new DiscListCommand());
+        jda.build();
+
     }
 }

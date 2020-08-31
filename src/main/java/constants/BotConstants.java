@@ -3,7 +3,7 @@ package constants;
 public class BotConstants {
 
     public static final String BASE_URL = "https://www.minecraftcrafting.info/";
-    public static final String PREFIX = "~";
+    public static final String PREFIX = "$";
     public static final String WOOD_URL = "imgs/craft_wood2.png";
     public static final String STICKS_URL = "imgs/craft_stick.png";
     public static final String WOODEN_PLANKS_URL = "imgs/craft_wood.gif";
@@ -25,25 +25,25 @@ public class BotConstants {
     public static final String HELP_TEXT  = "```diff\n" +
             "- RECIPE COMMANDS\n" +
             "CRAFTING RECIPES:\n" +
-            "+ <"+ PREFIX +"> <recipe> <the item you want to craft> : Shows how a certain item can be made.\n" +
+            "+ <"+ PREFIX +"><recipe> <the item you want to craft> : Shows how a certain item can be made.\n" +
             "Example:\n" +
-            ""+ PREFIX +" recipe crafting table\n" +
+            ""+ PREFIX +"recipe crafting table\n" +
             "\n" +
             "BREWING RECIPES\n" +
-            "+ <"+ PREFIX +"> <brewing> : Shows all the brewing recipes\n" +
+            "+ <"+ PREFIX +"><brewing> : Shows all the brewing recipes\n" +
             "\n" +
             "ITEMS YOU CAN BUILD WITH GIVEN INGREDIENT\n" +
-            "+ <"+ PREFIX +"> <ingr> <the ingredient> : Shows all the available items that can be build with a given ingredient\n" +
+            "+ <"+ PREFIX +"><ingr> <the ingredient> : Shows all the available items that can be beuild with a given ingredient\n" +
             "Example:\n" +
-            ""+ PREFIX +" ingr wooden planks\n" +
+            ""+ PREFIX +"ingr wooden planks\n" +
             "\n" +
             "- MUSIC COMMANDS\n" +
-            "+ <"+ PREFIX +"> <join> : The bot joins your voice channel\n" +
-            "+ <"+ PREFIX +"> <disconnect/leave> : The bot leaves voice channel\n" +
-            "+ <"+ PREFIX +"> <play> : The bot plays a Minecraft disc. Type " + PREFIX + " discs for more info\n" +
-            "+ <"+ PREFIX +"> <pause> : Pauses the bot\n" +
-            "+ <"+ PREFIX +"> <resume> : Resumes the bot\n" +
-            "+ <"+ PREFIX +"> <skip/next> : Plays next track\n" +
-            "+ <"+ PREFIX +"> <queue/q> : Shows the queue\n" +
+            "+ <"+ PREFIX +"><join> : The bot joins your voice channel\n" +
+            "+ <"+ PREFIX +"><disconnect/leave> : The bot leaves voice channel\n" +
+            "+ <"+ PREFIX +"><play> : The bot plays a minecraft disk. Type pr disc list for more info\n" +
+            "+ <"+ PREFIX +"><pause> : Pauses the bot\n" +
+            "+ <"+ PREFIX +"><resume> : Resumes the bot\n" +
+            "+ <"+ PREFIX +"><skip/next> : Plays next track\n" +
+            "+ <"+ PREFIX +"><queue/q> : Shows the queue\n" +
             "```";
 }
