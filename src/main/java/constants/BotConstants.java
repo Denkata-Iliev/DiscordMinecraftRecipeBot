@@ -33,14 +33,14 @@ public class BotConstants {
             "+ <"+TEMP_PREFIX+"> <brewing> : Shows all the brewing recipes\n" +
             "\n" +
             "ITEMS YOU CAN BUILD WITH GIVEN INGREDIENT\n" +
-            "+ <"+TEMP_PREFIX+"> <ingr> <the ingredient> : Shows all the available items that can be beuild with a given ingredient\n" +
+            "+ <"+TEMP_PREFIX+"> <ingr> <the ingredient> : Shows all the available items that can be build with a given ingredient\n" +
             "Example:\n" +
             ""+TEMP_PREFIX+" ingr wooden planks\n" +
             "\n" +
             "- MUSIC COMMANDS\n" +
             "+ <"+TEMP_PREFIX+"> <join> : The bot joins your voice channel\n" +
             "+ <"+TEMP_PREFIX+"> <disconnect/leave> : The bot leaves voice channel\n" +
-            "+ <"+TEMP_PREFIX+"> <play> : The bot plays a minecraft disk. Type pr disc list for more info\n" +
+            "+ <"+TEMP_PREFIX+"> <play> : The bot plays a Minecraft disc. Type " + TEMP_PREFIX + " discs for more info\n" +
             "+ <"+TEMP_PREFIX+"> <pause> : Pauses the bot\n" +
             "+ <"+TEMP_PREFIX+"> <resume> : Resumes the bot\n" +
             "+ <"+TEMP_PREFIX+"> <skip/next> : Plays next track\n" +

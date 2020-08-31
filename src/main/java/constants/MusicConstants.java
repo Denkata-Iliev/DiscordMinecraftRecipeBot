@@ -46,9 +46,9 @@ public class MusicConstants {
             "+ Stall\n" +
             "+ Strad\n" +
             "+ Ward\n" +
-            "+. Wait\n" +
-            "+. 11\n" +
-            "+. Pigstep\n" +
-            "+. 13\n"+
+            "+ Wait\n" +
+            "+ 11\n" +
+            "+ Pigstep\n" +
+            "+ 13\n"+
             "```";
 }
