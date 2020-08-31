@@ -40,7 +40,6 @@ public class RecipeWithCommand extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-
         if (event.getMessage().getContentRaw().substring(0, BotConstants.PREFIX.length()).equals(BotConstants.PREFIX)) {
             String[] message = event.getMessage().getContentRaw().substring(BotConstants.PREFIX.length()).split(" ");
             if (!event.getAuthor().isBot() && message.length > 0) {

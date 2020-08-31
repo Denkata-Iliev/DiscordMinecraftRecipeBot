@@ -11,7 +11,6 @@ import constants.BotConstants;
 import java.awt.*;
 
 import static constants.BotConstants.REQUESTED_BY;
-
 public class BrewingCommand extends ListenerAdapter {
 
     private static final String BREWING_RECIPES = "Brewing Recipes";
