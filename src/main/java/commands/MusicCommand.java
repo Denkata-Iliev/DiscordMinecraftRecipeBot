@@ -25,7 +25,7 @@ public class MusicCommand extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
         HashMap<String, String> songs = MusicConstants.mapSongs();
-        if (event.getMessage().getContentRaw().substring(0, BotConstants.PREFIX.length()).equals(BotConstants.PREFIX)) {
+        if (event.getMessage().getContentRaw().indexOf(BotConstants.PREFIX) == 0) {
             List<String> message = Arrays.asList(event.getMessage().getContentRaw().substring(BotConstants.PREFIX.length()).split(" "));
             AudioManager audioManager = event.getGuild().getAudioManager();
             GuildVoiceState memberVoiceState = event.getMember().getVoiceState();

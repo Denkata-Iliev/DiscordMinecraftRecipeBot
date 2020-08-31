@@ -21,7 +21,7 @@ public class BrewingCommand extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        if (event.getMessage().getContentRaw().substring(0, BotConstants.PREFIX.length()).equals(BotConstants.PREFIX)) {
+        if (event.getMessage().getContentRaw().indexOf(BotConstants.PREFIX) == 0) {
             String[] message = event.getMessage().getContentRaw().substring(BotConstants.PREFIX.length()).split(" ");
             if (!event.getAuthor().isBot()) {
                 if (message[0].equalsIgnoreCase(BREWING)) {
