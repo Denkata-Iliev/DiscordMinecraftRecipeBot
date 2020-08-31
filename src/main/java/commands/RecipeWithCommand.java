@@ -1,5 +1,6 @@
 package commands;
 
+import constants.BotConstants;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -39,28 +40,31 @@ public class RecipeWithCommand extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
-        String[] message = event.getMessage().getContentRaw().split(" ");
-        if (!event.getAuthor().isBot()) {
-            if (message[0].equalsIgnoreCase(TEMP_PREFIX) && message[1].equalsIgnoreCase(INGR)) {
-                String ingredient = getSearchedIngredient(message);
-                if (message.length <= 2) {
-                    event.getChannel().sendMessage(RecipeCommand.SPECIFY_ITEM).queue();
-                    return;
-                }
-                if (ingredient.trim().length() <= 3) {
-                    event.getChannel().sendMessage(RecipeCommand.AT_LEAST_FOUR_CHARACTERS_LONG).queue();
-                    return;
-                }
-                try {
-                    createIngredientsAndURLFile();
-                    List<String> itemsWithIngredient = getItemsListWithIngredient(ingredient);
-                    if (itemsWithIngredient.isEmpty()) {
-                        event.getChannel().sendMessage(NO_RECIPES_WITH_ITEM).queue();
+
+        if (event.getMessage().getContentRaw().substring(0, BotConstants.PREFIX.length()).equals(BotConstants.PREFIX)) {
+            String[] message = event.getMessage().getContentRaw().substring(BotConstants.PREFIX.length()).split(" ");
+            if (!event.getAuthor().isBot() && message.length > 0) {
+                if (message[0].equalsIgnoreCase(INGR)) {
+                    String ingredient = getSearchedIngredient(message);
+                    if (message.length <= 1) {
+                        event.getChannel().sendMessage(RecipeCommand.SPECIFY_ITEM).queue();
                         return;
                     }
-                    sendList(event, itemsWithIngredient, ingredient);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    if (ingredient.trim().length() <= 3) {
+                        event.getChannel().sendMessage(RecipeCommand.AT_LEAST_FOUR_CHARACTERS_LONG).queue();
+                        return;
+                    }
+                    try {
+                        createIngredientsAndURLFile();
+                        List<String> itemsWithIngredient = getItemsListWithIngredient(ingredient);
+                        if (itemsWithIngredient.isEmpty()) {
+                            event.getChannel().sendMessage(NO_RECIPES_WITH_ITEM).queue();
+                            return;
+                        }
+                        sendList(event, itemsWithIngredient, ingredient);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
@@ -80,7 +84,7 @@ public class RecipeWithCommand extends ListenerAdapter {
 
     private String getSearchedIngredient(String[] message) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 2; i < message.length; i++) {
+        for (int i = 1; i < message.length; i++) {
             sb.append(StringUtils.capitalize(message[i])).append(" ");
         }
         return sb.toString().trim();
@@ -94,7 +98,8 @@ public class RecipeWithCommand extends ListenerAdapter {
         Elements tableRowElements = tableElement.select(NOT_THEAD_TR);
 
         for (Element row : tableRowElements) {
-            if (row.getElementsByAttribute(SRC).attr(SRC).contains(HEADER) || row.getElementsByAttribute(SRC).attr(SRC).contains(PAGEAD)) {
+            if (row.getElementsByAttribute(SRC).attr(SRC).contains(HEADER)
+                    || row.getElementsByAttribute(SRC).attr(SRC).contains(PAGEAD)) {
                 continue;
             }
             Elements rowItems = row.select(TD);
@@ -102,7 +107,8 @@ public class RecipeWithCommand extends ListenerAdapter {
                 String s = rowItems.get(j).getElementsByAttribute(SRC).attr(SRC);
                 writer.append(rowItems.get(j).ownText().concat(s));
 
-                if (rowItems.get(j).ownText().isEmpty()) continue;
+                if (rowItems.get(j).ownText().isEmpty())
+                    continue;
 
                 if (j != rowItems.size() - 2) {
                     writer.append(", ");
