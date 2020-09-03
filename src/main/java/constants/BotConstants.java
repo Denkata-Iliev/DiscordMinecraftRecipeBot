@@ -4,6 +4,7 @@ public class BotConstants {
 
     public static final String BASE_URL = "https://www.minecraftcrafting.info/";
     public static final String PREFIX = "$";
+    public static final String SMELTING_BASE_URL = "https://www.minecraftcraftingguide.net/img/crafting/";
     public static final String WOOD_URL = "imgs/craft_wood2.png";
     public static final String STICKS_URL = "imgs/craft_stick.png";
     public static final String WOODEN_PLANKS_URL = "imgs/craft_wood.gif";
@@ -33,7 +34,7 @@ public class BotConstants {
             "+ <"+ PREFIX +"><brewing> : Shows all the brewing recipes\n" +
             "\n" +
             "ITEMS YOU CAN BUILD WITH GIVEN INGREDIENT\n" +
-            "+ <"+ PREFIX +"><ingr> <the ingredient> : Shows all the available items that can be beuild with a given ingredient\n" +
+            "+ <"+ PREFIX +"><ingr> <the ingredient> : Shows all the available items that can be build with a given ingredient\n" +
             "Example:\n" +
             ""+ PREFIX +"ingr wooden planks\n" +
             "\n" +
