@@ -1,0 +1,126 @@
+{
+    "potato": [
+        "https://www.minecraftcraftingguide.net/img/crafting/baked-potato-smelting.png",
+        "Baked Potato"
+    ],
+    "chicken": [
+        "https://www.minecraftcraftingguide.net/img/crafting/cooked-chicken-smelting.png",
+        "Cooked Chicken"
+    ],
+    "salmon": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657164245532672/salmon.png",
+        "Cooked Salmon"
+    ],
+    "porkchop": [
+        "https://www.minecraftcraftingguide.net/img/crafting/cooked-porkchop-smelting.png",
+        "Cooked Porkchop"
+    ],
+    "beef": [
+        "https://www.minecraftcraftingguide.net/img/crafting/steak-smelting.png",
+        "Steak"
+    ],
+    "clay": [
+        "https://www.minecraftcraftingguide.net/img/crafting/brick-smelting.png",
+        "Clay Brick"
+    ],
+    "sand": [
+        "https://www.minecraftcraftingguide.net/img/crafting/glass-smelting.png",
+        "Glass"
+    ],
+    "gold": [
+        "https://www.minecraftcraftingguide.net/img/crafting/gold-ingot-smelting.png",
+        "Golden Ingot"
+    ],
+    "clay block": [
+        "https://www.minecraftcraftingguide.net/img/crafting/hardened-clay-smelting.png",
+        "Hardened Clay"
+    ],
+    "iron": [
+        "https://www.minecraftcraftingguide.net/img/crafting/iron-ingot-smelting.png",
+        "Iron Ingot"
+    ],
+    "netherrack": [
+        "https://www.minecraftcraftingguide.net/img/crafting/nether-brick-smelting.png",
+        "Nether Brick"
+    ],
+    "cabblestone": [
+        "https://www.minecraftcraftingguide.net/img/crafting/stone-smelting.png",
+        "Stone"
+    ],
+    "cactus": [
+        "https://www.minecraftcraftingguide.net/img/crafting/cactus-green-smelting.png",
+        "Cactus Green"
+    ],
+    "wood": [
+        "https://www.minecraftcraftingguide.net/img/crafting/charcoal-smelting.png",
+        "Charrcoal"
+    ],
+    "coal": [
+        "https://www.minecraftcraftingguide.net/img/crafting/coal-smelting.png",
+        "Coal"
+    ],
+    "diamond": [
+        "https://www.minecraftcraftingguide.net/img/crafting/diamond-smelting.png",
+        "Diamond"
+    ],
+    "emerald": [
+        "https://www.minecraftcraftingguide.net/img/crafting/emerald-smelting.png",
+        "Emerald"
+    ],
+    "lapis": [
+        "https://www.minecraftcraftingguide.net/img/crafting/lapis-lazuli-smelting.png",
+        "Lapis Lazuli"
+    ],
+    "nether quartz": [
+        "https://www.minecraftcraftingguide.net/img/crafting/nether-quartz-smelting.png",
+        "Quartz"
+    ],
+    "redstone": [
+        "https://www.minecraftcraftingguide.net/img/crafting/redstone-dust-smelting.png",
+        "Redstone Dust"
+    ],
+    "mutton": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657158314917960/lamb.png",
+        "Cooked Mutton"
+    ],
+    "cod": [
+        "https://media.discordapp.net/attachments/751946761337307307/752659236592549908/cod.png",
+        "Cooked Cod"
+    ],
+    "kelp": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657156989517824/Kelp.png",
+        "Dried Kelp"
+    ],
+    "ancient debris": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657161187885137/netherite.png",
+        "Netherite Scrap"
+    ],
+    "sandstone": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657153843789834/cut_sandstone.png",
+        "Smooth Sandstone"
+    ],
+    "stone": [
+        "https://cdn.discordapp.com/attachments/751946761337307307/752657469787996220/stone.png",
+        "Smooth Stone"
+    ],
+    "terracotta": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657464176017521/taracota.png",
+        "Glazed Tarracotta"
+    ],
+    "chorus fruit": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657155168927805/end.png",
+        "Popped Chorus Fruit"
+    ],
+    "wet sponge": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657466600194130/wet_sponge.png",
+        "Sponge"
+    ],
+    "sea pickle": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657165562544188/sea_pickle.png",
+        "Lime Dye"
+    ],
+    "Nether Gold Ore": [
+        "https://media.discordapp.net/attachments/751946761337307307/752657159644512296/nether_gold.png",
+        "Gold Ingot"
+    ]
+}

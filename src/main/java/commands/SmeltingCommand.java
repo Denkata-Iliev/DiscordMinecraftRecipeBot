@@ -1,88 +1,79 @@
 package commands;
 
-import java.awt.Color;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import javax.annotation.Nonnull;
-
-import org.jsoup.helper.HttpConnection;
-import org.jsoup.nodes.Document;
-
-import org.apache.commons.lang3.StringUtils;
-import org.jsoup.Jsoup;
 
 import constants.BotConstants;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.apache.commons.lang3.StringUtils;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-import static constants.BotConstants.BASE_URL;
+import java.awt.*;
+import java.io.File;
+import java.util.Scanner;
+import static constants.BotConstants.REQUESTED_BY;
+
 
 public class SmeltingCommand extends ListenerAdapter {
 
-    private final static String SMELTING_ENDING = "-smelting.png";
+    private final static String SMELTING = "smelting";
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
+
         if (event.getMessage().getContentRaw().indexOf(BotConstants.PREFIX) == 0) {
-            String[] message = event.getMessage().getContentRaw().substring(BotConstants.PREFIX.length()).split(" ");
-            if (message[0].equalsIgnoreCase("smelting")) {
-                String recipeName = getRecipeName(message);
-                String imgURL = BotConstants.SMELTING_BASE_URL + recipeName;
-                String title = getTitle(message);
-                if (isValidImage(imgURL))
-                    sendEmbedMessage(event, title, imgURL);
-                else
-                    event.getChannel().sendMessage("No smelting recipe.").queue();
-
-            }
-        }
-    }
-
-    private String getTitle(String[] message) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 1; i < message.length; i++) {
-            sb.append(StringUtils.capitalize(message[i])).append(" ");
-        }
-        return sb.toString();
-    }
-
-    private String getRecipeName(String[] message) {
-        String recipeName = "";
-        if (message.length == 2) {
-            recipeName += message[1] + SMELTING_ENDING;
-        } else {
-            for (int i = 1; i < message.length; i++) {
-                if (i == message.length - 1) {
-                    recipeName += message[i] + SMELTING_ENDING;
-                } else {
-                    recipeName += message[i] + "-";
+            String[] message = event.getMessage().getContentRaw().substring(1).split(" ");
+            if (message[0].equalsIgnoreCase(SMELTING)) {
+                String ingredient = getIngredient(message);
+                JSONArray productDetails = productDetails(ingredient);
+                if(productDetails == null){
+                    event.getChannel().sendMessage("No smelting recipe for this item.").queue();
+                }else {
+                    sendEmbedMessage(productDetails,ingredient,event);
                 }
             }
         }
-        return recipeName;
     }
 
-    private void sendEmbedMessage(GuildMessageReceivedEvent event, String title, String imgURL) {
+    private void sendEmbedMessage(JSONArray productDetails, String ingredient, GuildMessageReceivedEvent event){
         EmbedBuilder builder = new EmbedBuilder();
-        builder.setTitle(title);
-        builder.setColor(Color.GRAY);
-        builder.setImage(imgURL);
-        builder.setFooter("Requested by: " + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
+        builder.setTitle((String)productDetails.get(1));
+        builder.setDescription(String.format("Recipe with requested ingredient **\"%s\"**",StringUtils.capitalize(ingredient)));
+        builder.setImage((String) productDetails.get(0));
+        builder.setColor(Color.WHITE);
+        builder.setFooter(REQUESTED_BY + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());
         event.getChannel().sendMessage(builder.build()).queue();
     }
 
-    private boolean isValidImage(String imgURL) {
-        HttpURLConnection connection = null;
+    private JSONArray productDetails(String ingredient){
+        JSONParser parser = new JSONParser();
+        JSONArray jsonArray = null;
         try {
-            URL url = new URL(imgURL);
-            connection = (HttpURLConnection) url.openConnection();
-            return connection.getResponseCode() != HttpURLConnection.HTTP_NOT_FOUND;
-        } catch (IOException e) {
+            Scanner scanner = new Scanner(new File("src/main/java/static/smelting.json"));
+            String jsonString = "";
+            while (scanner.hasNext()) {
+                jsonString += scanner.nextLine();
+            }
+
+            Object obj = parser.parse(jsonString);
+            JSONObject jsonObject = (JSONObject) obj;
+            jsonArray = (JSONArray) jsonObject.get(ingredient);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return jsonArray;
+    }
+
+    private String getIngredient(String[] message) {
+        String ingredient = "";
+        for (int i = 1; i < message.length; i++) {
+            if (i == message.length - 1) {
+                ingredient += message[i].toLowerCase();
+            } else ingredient += message[i].toLowerCase() + " ";
+        }
+        return ingredient;
     }
 }
