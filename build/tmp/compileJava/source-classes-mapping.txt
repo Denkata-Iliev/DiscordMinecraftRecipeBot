@@ -1,3 +1,5 @@
+commands/SmeltingCommand.java
+ commands.SmeltingCommand
 commands/RecipeCommand.java
  commands.RecipeCommand
 constants/MusicConstants.java
@@ -8,8 +10,6 @@ constants/SpecialCasesConstants.java
  constants.SpecialCasesConstants
 music/AudioPlayerSendHandler.java
  music.AudioPlayerSendHandler
-MessageEvent.java
- MessageEvent
 music/TrackScheduler.java
  music.TrackScheduler
 commands/BrewingCommand.java

@@ -16,6 +16,7 @@ public class Main {
         jda.addEventListeners(new RecipeWithCommand());
         jda.addEventListeners(new HelpCommand());
         jda.addEventListeners(new DiscListCommand());
+        jda.addEventListeners(new SmeltingCommand());
         jda.build();
 
     }
