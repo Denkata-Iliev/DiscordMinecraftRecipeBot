@@ -1,5 +1,5 @@
-commands/MusicCommand.java
- commands.MusicCommand
+commands/SmeltingCommand.java
+ commands.SmeltingCommand
 commands/RecipeCommand.java
  commands.RecipeCommand
 constants/MusicConstants.java
@@ -14,8 +14,8 @@ music/TrackScheduler.java
  music.TrackScheduler
 commands/BrewingCommand.java
  commands.BrewingCommand
-constants/BotConstants.java
- constants.BotConstants
+Main.java
+ Main
 music/PlayerManager.java
  music.PlayerManager
  music.PlayerManager$1
@@ -25,7 +25,7 @@ music/GuildMusicManager.java
  music.GuildMusicManager
 commands/DiscListCommand.java
  commands.DiscListCommand
-commands/SmeltingCommand.java
- commands.SmeltingCommand
-Main.java
- Main
+constants/BotConstants.java
+ constants.BotConstants
+commands/MusicCommand.java
+ commands.MusicCommand

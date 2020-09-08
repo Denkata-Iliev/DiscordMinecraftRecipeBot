@@ -19,14 +19,14 @@ import static constants.BotConstants.REQUESTED_BY;
 
 public class SmeltingCommand extends ListenerAdapter {
 
-    private final static String SMELTING = "smelting";
+    private final static String SMELT = "smelt";
 
     @Override
     public void onGuildMessageReceived(@Nonnull GuildMessageReceivedEvent event) {
 
         if (event.getMessage().getContentRaw().indexOf(BotConstants.PREFIX) == 0) {
             String[] message = event.getMessage().getContentRaw().substring(1).split(" ");
-            if (message[0].equalsIgnoreCase(SMELTING)) {
+            if (message[0].equalsIgnoreCase(SMELT)) {
                 String ingredient = getIngredient(message);
                 JSONArray productDetails = productDetails(ingredient);
                 if(productDetails == null){
@@ -41,7 +41,7 @@ public class SmeltingCommand extends ListenerAdapter {
     private void sendEmbedMessage(JSONArray productDetails, String ingredient, GuildMessageReceivedEvent event){
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle((String)productDetails.get(1));
-        builder.setDescription(String.format("Recipe with requested ingredient **\"%s\"**",StringUtils.capitalize(ingredient)));
+        builder.setDescription(String.format("Smelting recipe with requested ingredient - **\"%s\"**",StringUtils.capitalize(ingredient)));
         builder.setImage((String) productDetails.get(0));
         builder.setColor(Color.WHITE);
         builder.setFooter(REQUESTED_BY + event.getAuthor().getName(), event.getAuthor().getAvatarUrl());

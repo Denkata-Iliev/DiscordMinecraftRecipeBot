@@ -28,7 +28,7 @@ public class BotConstants {
             "CRAFTING RECIPES:\n" +
             "+ <"+ PREFIX +"><recipe> <the item you want to craft> : Shows how a certain item can be made.\n" +
             "Example:\n" +
-            ""+ PREFIX +"recipe crafting table\n" +
+            PREFIX +"recipe crafting table\n" +
             "\n" +
             "BREWING RECIPES\n" +
             "+ <"+ PREFIX +"><brewing> : Shows all the brewing recipes\n" +
@@ -36,12 +36,17 @@ public class BotConstants {
             "ITEMS YOU CAN BUILD WITH GIVEN INGREDIENT\n" +
             "+ <"+ PREFIX +"><ingr> <the ingredient> : Shows all the available items that can be build with a given ingredient\n" +
             "Example:\n" +
-            ""+ PREFIX +"ingr wooden planks\n" +
+            PREFIX +"ingr wooden planks\n" +
+            "\n" +
+            "ITEMS YOU CAN GET FROM SMELTING GIVEN ITEM\n" +
+            "+ <"+ PREFIX +"><smelt> <the item you want to smelt> : Shows the item that you'll get from smelting a given item\n" +
+            "Example:\n" +
+            PREFIX +"smelt diamond ore\n" +
             "\n" +
             "- MUSIC COMMANDS\n" +
             "+ <"+ PREFIX +"><join> : The bot joins your voice channel\n" +
             "+ <"+ PREFIX +"><disconnect/leave> : The bot leaves voice channel\n" +
-            "+ <"+ PREFIX +"><play> : The bot plays a minecraft disk. Type pr disc list for more info\n" +
+            "+ <"+ PREFIX +"><play> : The bot plays a minecraft disk. Type \""+ PREFIX + " discs\" to get the discs names\n" +
             "+ <"+ PREFIX +"><pause> : Pauses the bot\n" +
             "+ <"+ PREFIX +"><resume> : Resumes the bot\n" +
             "+ <"+ PREFIX +"><skip/next> : Plays next track\n" +

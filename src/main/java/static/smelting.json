@@ -35,7 +35,7 @@
         "https://www.minecraftcraftingguide.net/img/crafting/hardened-clay-smelting.png",
         "Hardened Clay"
     ],
-    "iron": [
+    "iron ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/iron-ingot-smelting.png",
         "Iron Ingot"
     ],
@@ -55,19 +55,19 @@
         "https://www.minecraftcraftingguide.net/img/crafting/charcoal-smelting.png",
         "Charrcoal"
     ],
-    "coal": [
+    "coal ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/coal-smelting.png",
         "Coal"
     ],
-    "diamond": [
+    "diamond ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/diamond-smelting.png",
         "Diamond"
     ],
-    "emerald": [
+    "emerald ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/emerald-smelting.png",
         "Emerald"
     ],
-    "lapis": [
+    "lapis lazuli ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/lapis-lazuli-smelting.png",
         "Lapis Lazuli"
     ],
@@ -75,7 +75,7 @@
         "https://www.minecraftcraftingguide.net/img/crafting/nether-quartz-smelting.png",
         "Quartz"
     ],
-    "redstone": [
+    "redstone ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/redstone-dust-smelting.png",
         "Redstone Dust"
     ],
@@ -119,7 +119,7 @@
         "https://media.discordapp.net/attachments/751946761337307307/752657165562544188/sea_pickle.png",
         "Lime Dye"
     ],
-    "Nether Gold Ore": [
+    "nether gold ore": [
         "https://media.discordapp.net/attachments/751946761337307307/752657159644512296/nether_gold.png",
         "Gold Ingot"
     ]
