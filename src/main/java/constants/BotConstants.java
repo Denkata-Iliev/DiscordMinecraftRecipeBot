@@ -46,7 +46,7 @@ public class BotConstants {
             "- MUSIC COMMANDS\n" +
             "+ <"+ PREFIX +"><join> : The bot joins your voice channel\n" +
             "+ <"+ PREFIX +"><disconnect/leave> : The bot leaves voice channel\n" +
-            "+ <"+ PREFIX +"><play> : The bot plays a minecraft disk. Type \""+ PREFIX + " discs\" to get the discs names\n" +
+            "+ <"+ PREFIX +"><play> : The bot plays a minecraft disk. Type \""+ PREFIX + "discs\" to get the discs names\n" +
             "+ <"+ PREFIX +"><pause> : Pauses the bot\n" +
             "+ <"+ PREFIX +"><resume> : Resumes the bot\n" +
             "+ <"+ PREFIX +"><skip/next> : Plays next track\n" +

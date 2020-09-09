@@ -27,9 +27,9 @@
         "https://www.minecraftcraftingguide.net/img/crafting/glass-smelting.png",
         "Glass"
     ],
-    "gold": [
+    "gold ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/gold-ingot-smelting.png",
-        "Golden Ingot"
+        "Gold Ingot"
     ],
     "clay block": [
         "https://www.minecraftcraftingguide.net/img/crafting/hardened-clay-smelting.png",
@@ -43,7 +43,7 @@
         "https://www.minecraftcraftingguide.net/img/crafting/nether-brick-smelting.png",
         "Nether Brick"
     ],
-    "cabblestone": [
+    "cobblestone": [
         "https://www.minecraftcraftingguide.net/img/crafting/stone-smelting.png",
         "Stone"
     ],
@@ -53,7 +53,7 @@
     ],
     "wood": [
         "https://www.minecraftcraftingguide.net/img/crafting/charcoal-smelting.png",
-        "Charrcoal"
+        "Charcoal"
     ],
     "coal ore": [
         "https://www.minecraftcraftingguide.net/img/crafting/coal-smelting.png",
@@ -105,7 +105,7 @@
     ],
     "terracotta": [
         "https://media.discordapp.net/attachments/751946761337307307/752657464176017521/taracota.png",
-        "Glazed Tarracotta"
+        "Glazed Terracotta"
     ],
     "chorus fruit": [
         "https://media.discordapp.net/attachments/751946761337307307/752657155168927805/end.png",
